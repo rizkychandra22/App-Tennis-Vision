@@ -28,18 +28,18 @@ const NAV_ITEMS: NavItem[] = [
     icon: Home,
   },
   {
-    path: '/analyst',
-    label: 'Analisis',
+    path: '/analysis',
+    label: 'Analysis',
     icon: Scan,
   },
   {
     path: '/history',
-    label: 'Riwayat',
+    label: 'History',
     icon: History,
   },
   {
-    path: '/setting',
-    label: 'Pengaturan',
+    path: '/settings',
+    label: 'Settings',
     icon: Settings,
   },
 ]
