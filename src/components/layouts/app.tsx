@@ -28,7 +28,7 @@ const NAV_ITEMS: NavItem[] = [
     icon: Home,
   },
   {
-    path: '/analyst',
+    path: '/analysis',
     label: 'Analisis',
     icon: Scan,
   },
