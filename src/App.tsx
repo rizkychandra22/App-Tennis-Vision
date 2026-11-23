@@ -1,20 +1,30 @@
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-950">
-      <div className="rounded-xl border border-slate-700 bg-slate-900 p-8 text-center shadow-xl">
-        <h1 className="text-3xl font-bold text-white">
-          Tennis Vision AI
-        </h1>
+    <main className="flex min-h-screen items-center justify-center bg-slate-100 p-4">
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle>Tennis Vision AI</CardTitle>
+          <CardDescription>
+            React + Vite + TypeScript + Tailwind CSS + shadcn/ui
+          </CardDescription>
+        </CardHeader>
 
-        <p className="mt-3 text-slate-400">
-          React + Vite + TypeScript + Tailwind CSS
-        </p>
-
-        <button className="mt-6 rounded-lg bg-emerald-500 px-6 py-3 font-semibold text-white hover:bg-emerald-600">
-          Tailwind Berhasil!
-        </button>
-      </div>
-    </div>
+        <CardContent>
+          <Button className="w-full">
+            Setup Berhasil
+          </Button>
+        </CardContent>
+      </Card>
+    </main>
   )
 }
 
