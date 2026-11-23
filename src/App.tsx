@@ -2,6 +2,9 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AppLayout } from '@/components/layouts/app'
 
+const HomePage = lazy(() => import('@/pages/home'))
+const AnalysisPage = lazy(() => import('@/pages/analysis'))
+const HistoryPage = lazy(() => import('@/pages/history'))
 const SettingsPage = lazy(() => import('@/pages/settings'))
 
 function App() {
@@ -10,8 +13,11 @@ function App() {
       <Suspense fallback={null}>
         <Routes>
           <Route element={<AppLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/analysis" element={<AnalysisPage />} />
+            <Route path="/history" element={<HistoryPage />} />
             <Route path="/settings" element={<SettingsPage />} />
-            <Route path="*" element={<Navigate to="/settings" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
       </Suspense>
