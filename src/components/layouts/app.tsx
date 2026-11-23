@@ -29,17 +29,17 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     path: '/analysis',
-    label: 'Analisis',
+    label: 'Analysis',
     icon: Scan,
   },
   {
     path: '/history',
-    label: 'Riwayat',
+    label: 'History',
     icon: History,
   },
   {
-    path: '/setting',
-    label: 'Pengaturan',
+    path: '/settings',
+    label: 'Settings',
     icon: Settings,
   },
 ]
