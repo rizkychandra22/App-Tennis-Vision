@@ -4,6 +4,7 @@ import { AppLayout } from '@/components/layouts/app'
 
 const HomePage = lazy(() => import('@/pages/home'))
 const AnalysisPage = lazy(() => import('@/pages/analysis'))
+const HistoryPage = lazy(() => import('@/pages/history'))
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route element={<AppLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/analysis" element={<AnalysisPage />} />
+            <Route path="/history" element={<HistoryPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
