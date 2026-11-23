@@ -13,7 +13,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { cn } from '@/lib/utils'
 
 interface HistoryItem {
   id: string
@@ -93,6 +93,7 @@ const MOCK_HISTORY: HistoryItem[] = [
 
 export default function HistoryPage() {
   const [selectedItem, setSelectedItem] = useState<HistoryItem | null>(null)
+  const [category, setCategory] = useState<'upload' | 'live'>('upload')
 
   const uploadHistory = MOCK_HISTORY.filter((item) => item.source === 'upload')
   const liveHistory = MOCK_HISTORY.filter((item) => item.source === 'live')
@@ -234,34 +235,41 @@ export default function HistoryPage() {
           </Card>
         </div>
       ) : (
-        /* Tabs Berdasarkan Upload dan Live */
-        <Tabs defaultValue="upload" className="w-full space-y-3">
-          <TabsList className="w-full grid grid-cols-2 p-1 h-11 bg-muted/60 border border-border/60 rounded-2xl">
-            <TabsTrigger
-              value="upload"
-              className="rounded-xl text-xs font-semibold gap-1.5 data-[state=active]:bg-card data-[state=active]:text-foreground data-[state=active]:shadow-xs transition-all"
+        /* Tabs Berdasarkan Upload dan Live - Ukuran & Style sama persis dengan Analysis */
+        <div className="space-y-3">
+          <div className="grid grid-cols-2 p-1 bg-muted/60 border border-border/60 rounded-2xl">
+            <button
+              type="button"
+              onClick={() => setCategory('upload')}
+              className={cn(
+                'flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-xs font-semibold transition-all duration-200 select-none',
+                category === 'upload'
+                  ? 'bg-card text-foreground shadow-xs'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
             >
-              <CloudUpload className="size-3.5" />
+              <CloudUpload className="size-4" />
               <span>Upload Video</span>
-            </TabsTrigger>
+            </button>
 
-            <TabsTrigger
-              value="live"
-              className="rounded-xl text-xs font-semibold gap-1.5 data-[state=active]:bg-card data-[state=active]:text-foreground data-[state=active]:shadow-xs transition-all"
+            <button
+              type="button"
+              onClick={() => setCategory('live')}
+              className={cn(
+                'flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-xs font-semibold transition-all duration-200 select-none',
+                category === 'live'
+                  ? 'bg-card text-foreground shadow-xs'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
             >
-              <Radio className="size-3.5 text-emerald-500" />
+              <Radio className="size-4 text-emerald-500" />
               <span>Kamera Live</span>
-            </TabsTrigger>
-          </TabsList>
+            </button>
+          </div>
 
-          <TabsContent value="upload" className="mt-0 focus-visible:outline-none">
-            {renderHistoryList(uploadHistory)}
-          </TabsContent>
-
-          <TabsContent value="live" className="mt-0 focus-visible:outline-none">
-            {renderHistoryList(liveHistory)}
-          </TabsContent>
-        </Tabs>
+          {/* List items sesuai kategori yang dipilih */}
+          {category === 'upload' ? renderHistoryList(uploadHistory) : renderHistoryList(liveHistory)}
+        </div>
       )}
     </div>
   )

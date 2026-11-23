@@ -12,7 +12,7 @@ interface MetricCardProps {
 const METRIC_CARDS: MetricCardProps[] = [
   {
     icon: Camera,
-    value: 'Siap',
+    value: '2',
     label: 'Kamera Live',
   },
   {
@@ -22,12 +22,12 @@ const METRIC_CARDS: MetricCardProps[] = [
   },
   {
     icon: Zap,
-    value: 'km/jam',
-    label: 'Kecepatan Bola',
+    value: '120',
+    label: 'Maks Kecepatan Bola',
   },
   {
     icon: Target,
-    value: 'In / Out',
+    value: '12',
     label: 'Bola In/Out',
   },
 ]

@@ -5,10 +5,9 @@ import {
   Scan,
   History,
   Settings,
-  Image as ImageIcon,
-  Smartphone,
   Info,
 } from 'lucide-react'
+import { TennisBall } from '@/components/icons/tennis-ball'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -80,7 +79,7 @@ export const AppLayout: React.FC = () => {
           {/* Header Visual */}
           <div className="bg-gradient-to-b from-primary/10 via-primary/5 to-transparent pt-8 pb-3 flex flex-col items-center">
             <div className="size-16 rounded-2xl bg-background border border-border shadow-sm flex items-center justify-center text-primary mb-3">
-              <Smartphone className="size-8 stroke-[1.75]" />
+              <TennisBall className="size-8 stroke-[1.75]" />
             </div>
             <Badge variant="outline" className="font-mono text-[11px] tracking-wider uppercase px-2.5 py-0.5">
               TENNIS VISION
@@ -126,7 +125,7 @@ export const AppLayout: React.FC = () => {
                 <span className="font-semibold text-foreground block mb-0.5">
                   Tips Akses di Desktop:
                 </span>
-                Tekan <kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px] font-mono shadow-2xs">F12</kbd> lalu klik ikon <strong>Toggle Device Toolbar</strong> (<kbd className="px-1.5 py-0.5 bg-background border border-border rounded text-[10px] font-mono shadow-2xs">Ctrl + Shift + M</kbd>) pada browser Anda untuk beralih ke simulasi layar ponsel.
+                Tekan <kbd className="px-1 py-0.5 bg-background border border-border rounded text-[10px] font-mono">F12</kbd> pada browser Anda untuk beralih ke layar ponsel.
               </div>
             </div>
           </CardContent>
@@ -150,15 +149,15 @@ export const AppLayout: React.FC = () => {
             </h1>
           </div>
 
-          {/* Right Header Action Button */}
+          {/* Right Header Action Button: Ikon Bola Tenis */}
           <Button
             type="button"
             variant="outline"
             size="icon"
             className="size-11 rounded-2xl shadow-xs active:scale-95 transition-all bg-card border-border"
-            aria-label="Logo Icon"
+            aria-label="Tennis Ball"
           >
-            <ImageIcon className="size-5 text-muted-foreground" />
+            <TennisBall className="size-5 text-foreground" />
           </Button>
         </div>
       </header>
