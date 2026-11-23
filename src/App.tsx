@@ -12,7 +12,7 @@ function App() {
     <main className="flex min-h-screen items-center justify-center bg-slate-100 p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Tennis Vision AI</CardTitle>
+          <CardTitle>Tennis Vision</CardTitle>
           <CardDescription>
             React + Vite + TypeScript + Tailwind CSS + shadcn/ui
           </CardDescription>
